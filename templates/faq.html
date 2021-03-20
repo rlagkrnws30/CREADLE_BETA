@@ -43,6 +43,10 @@
         <h2 class="faq__search--title">무엇을 도와드릴까요?</h2>
         <div class="faq__search--box">
             <input type="text" name="searchBar" id="searchBar" placeholder="궁금한 내용을 검색해보세요" class="searchBar">
+            <div class="faq__serach--icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <button class="searchBar__cancleBtn"></button>
         </div>
     </div>
 </section>
@@ -61,35 +65,35 @@
             </li>
             <div class="faq__category--dropdown">
                 <li>
-                    <button class="faq__category--text"><label for="0">전체</label></button>
+                    <button class="faq__category--text" data-filter="*"><label for="0">전체</label></button>
                 </li>
                 <li>
-                    <button class="faq__category--text"><label for="a">자주 묻는 질문</label></button>
+                    <button class="faq__category--text" data-filter="frq"><label for="a">자주 묻는 질문</label></button>
                 </li>
                 <li>
-                    <button class="faq__category--text"><label for="b">타이탄 플랫폼 관련</label></button>
+                    <button class="faq__category--text" data-filter="platform"><label for="b">타이탄 플랫폼 관련</label></button>
                 </li>
                 <li>
-                    <button class="faq__category--text"><label for="c">회원계정 및 보안</label></button>
+                    <button class="faq__category--text" data-filter="account"><label for="c">회원계정 및 보안</label></button>
                 </li>
                 <li>
-                    <button class="faq__category--text"><label for="d">입/출금 관련</label></button>
+                    <button class="faq__category--text" data-filter="count"><label for="d">입/출금 관련</label></button>
                 </li>
                 <li>
-                    <button class="faq__category--text"><label for="e">옥션/청약</label></button>
+                    <button class="faq__category--text" data-filter="auction"><label for="e">옥션/청약</label></button>
                 </li>
                 <li>
-                    <button class="faq__category--text"><label for="f">거래/매매 관련</label></button>
+                    <button class="faq__category--text" data-filter="trade"><label for="f">거래/매매 관련</label></button>
                 </li>
                 <li>
-                    <button class="faq__category--text"><label for="g">수익 및 배당</label></button>
+                    <button class="faq__category--text" data-filter="alloc"><label for="g">수익 및 배당</label></button>
                 </li>
             </div>
         </ul>
     </div>
 </section>
 <section id="accordian__question">
-    <div class="question__answer--accordian">
+    <div class="question__answer--accordian" data-type="platform">
         <div class="question">
             <h2 class="question__title">Q. 타이탄은 어떤 서비스인가요?</h2>
             <button class="question__button">
@@ -120,7 +124,7 @@
                     내가 시청할 수록 더 많은 배당금을 가져갈 수 있는 투명한 이익 공유 구조입니다.<br></p></h3>
         </div>
     </div>
-    <div class="question__answer--accordian">
+    <div class="question__answer--accordian" data-type="platform">
         <div class="question">
             <h2 class="question__title">Q. 채널 지분은 어떻게 얻을 수 있나요?</h2>
             <button class="question__button">
@@ -139,6 +143,37 @@
             </h3>
         </div>
     </div>
+    <div class="question__answer--accordian" data-type="platform">
+        <div class="question">
+            <h2 class="question__title">Q. 타이탄에 투자한 제 투자자산은 안전하게 운영되나요?</h2>
+            <button class="question__button">
+                <i class="fas fa-angle-down"></i>
+            </button>
+        </div>
+        <div class="answer">
+            <h3 class="question__answer">
+                <p>타이탄 플랫폼의 거래 정보는 중앙집중형 데이터 저장 방식이 아닌,<br>
+                    플랫폼 참여자 모두에게 동일한 데이터가 분산 저장되는
+                <h2>블록체인 분산원장 기술</h2>로 안전하게 보호됩니다.
+                </p>
+            </h3>
+        </div>
+    </div>
+    <div class="question__answer--accordian" data-type="alloc">
+        <div class="question">
+            <h2 class="question__title">Q. 수익 공유금은 누구나 다 받을 수 있나요?</h2>
+            <button class="question__button">
+                <i class="fas fa-angle-down"></i>
+            </button>
+        </div>
+        <div class="answer">
+            <h3 class="question__answer">
+                <p>타이탄 플랫폼의 거래 정보는 중앙집중형 데이터 저장 방식이 아닌,<br>
+                    플랫폼 참여자 모두에게 동일한 데이터가 분산 저장되는
+                <h2>블록체인 분산원장 기술</h2>로 안전하게 보호됩니다.
+                </p>
+            </h3>
+        </div>
     </div>
 </section>
 </body>
