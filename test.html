@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #check {
+            display: none;
+        }
+
+        .checkmark {
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #ddd;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        #check:checked ~ .checkmark {
+            background-color: #0DA163;
+        }
+
+        .checkmark::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 11.25px;
+            border-right: 5px solid #fff;
+            border-bottom: 5px solid #fff;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateZ(40deg);
+        }
+        .term{
+            margin: auto;
+            padding-left: 10px;
+            padding-right: 50px;
+        }
+        .signup__view{
+            color : #ddd;
+            margin: auto;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="checkbox-wrapper">
+    <input type="checkbox" id="check">
+    <label for="check" class="checkmark"></label>
+    <h4 class="term">이용약관 동의</h4>
+    <a class="signup__view"><h4 class="signup__view">보기</h4></a>
+</div>
+</body>
+</html>

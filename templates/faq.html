@@ -2,48 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>타이탄 - FAQ</title>
+    <title>FAQ-크레들</title>
     <meta name="description" content="TITAN service information">
     <meta name="author" content="KIM HAKJUN">
-    <link rel="icon" type="image/png" href="../static/images/logo_lite_blue_v1.png">
+    <link rel="icon" type="image/png" href="../static/images/app_logo.png">
     <script src="https://kit.fontawesome.com/fd3b0e5cce.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="../static/css/style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="../static/faq.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL1PCPZ5D5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-TL1PCPZ5D5');
+    </script>
 </head>
 <body>
 <div id=header>
-    <nav id="navbar" class="navbar--dark">
+    <nav id="navbar">
         <div class="navbar__box">
             <a href="/">
-                <img class="navbar__logo" src="../static/images/logo_blue_v1.png">
+                <h4 class="navbar__logo">CREADLE</h4>
             </a>
-            <ul class="navbar__menu">
-                <button class="navbar__toggle--cancle--btn">
-                    <i class="fas fa-times"></i>
-                </button>
-                <li class="navbar__menu__item active" data-link="#home">옥션 신청하기</li>
-                <li class="navbar__menu__item" data-link="#inform"><a href="/#inform">서비스 안내</a></li>
-                <li class="navbar__menu__item" data-link="#FAQ"><a class="navbar__menu__item" href="/faq">FAQ</a></li>
-                <li class="navbar__menu__item" data-link="#account">로그인</li>
-                <li class="navbar__menu__item" data-link="#new_account">회원가입</li>
-            </ul>
+            <div class="navbar__menu">
+                <ul class="navbar__menu--main">
+                    <button class="navbar__toggle--cancle--btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <li class="navbar__menu__item" data-link="#home">
+                        <button onclick="window.open('https://form.office.naver.com/form/responseView.cmd?formkey=ZGRhNGQ4MWMtNWNkZC00NTFjLTlkNzctMDI3MjVkYzc4YTEy&sourceId=urlshare')">
+                            공모 신청하기
+                        </button>
+                    </li>
+                    <li class="navbar__menu__item" data-link="#inform"><a href="/#inform">서비스 안내</a></li>
+                    <li class="navbar__menu__item" data-link="#FAQ"><a class="navbar__menu__item" href="/faq">FAQ</a>
+                    </li>
+                    <li class="navbar__menu__item" data-link="#term"><a class="navbar__menu__item" href="/term">이용약관</a>
+                    </li>
+                    {#                    <li class="navbar__menu__item" data-link="#account" id="#login"><a class="navbar__menu__item"#}
+                    {#                                                                                       href="/login">{{ login }}</a>#}
+                    {#                    </li>#}
+                    <li class="navbar__menu__item remove" id="#mychannel">내 채널</li>
+                    <li class="navbar__menu__item remove" id="#manage">계정관리</li>
+                    <li class="navbar__menu__item remove" id="#logout">로그아웃</li>
+                </ul>
+                {#                <button class="navbar__auth">#}
+                {#                    <img src="{{ user_picture }}" class="navbar__auth--picture">#}
+                {#                    <div class="navbar__auth--dropMenu">#}
+                {#                        <div class="navbar__auth--submenu">#}
+                {#                            <div class="auth__image">#}
+                {#                                <img src="{{ user_picture }}" class="auth__submenu--picture">#}
+                {#                            </div>#}
+                {#                            <div class="auth__name--email">#}
+                {#                                <h5 class="auth__submenu--name">{{ user_name }}</h5>#}
+                {#                                <h5 class="auth__submenu">{{ user_email }}</h5>#}
+                {#                            </div>#}
+                {#                        </div>#}
+                {#                        <div class="auth__line">#}
+                {##}
+                {#                        </div>#}
+                {#                        <div class="auth__subtitle">#}
+                {#                            <img src="/static/images/manage_accounts_white_24dp%20(1).svg">#}
+                {#                            <h5 class="auth__subtext"><a class="auth__submenu" href="/mypage">마이 페이지</a></h5>#}
+                {#                        </div>#}
+                {#                        <div class="auth__subtitle">#}
+                {#                            <img src="/static/images/logout_white_24dp%20(1).svg">#}
+                {#                            <h5 class="auth__subtext"><a class="auth__submenu" id="#logout1">로그아웃</a></h5>#}
+                {#                        </div>#}
+                {#                    </div>#}
+                {#                </button>#}
+            </div>
             <!--        Toggle button-->
             <button class="navbar__toggle--btn">
                 <i class="fas fa-bars"></i>
+            </button>
+            <button class="navbar__auth--mobile">
+                <img src="{{ user_picture }}" class="navbar__auth--mb--picture">
             </button>
         </div>
     </nav>
 </div>
 <section id="faq__search">
     <div class="faq__search--container">
-        <h2 class="faq__search--title">무엇을 도와드릴까요?</h2>
+        <h3 class="faq__search--title">무엇을 도와드릴까요?</h3>
         <div class="faq__search--box">
             <input type="text" name="searchBar" id="searchBar" placeholder="궁금한 내용을 검색해보세요" class="searchBar">
-            <div class="faq__serach--icon">
+            <div class="faq__search--icon">
                 <i class="fas fa-search"></i>
             </div>
             <button class="searchBar__cancleBtn"></button>
@@ -70,24 +126,22 @@
                 <li>
                     <button class="faq__category--text" data-filter="frq"><label for="a">자주 묻는 질문</label></button>
                 </li>
-                <li>
-                    <button class="faq__category--text" data-filter="platform"><label for="b">타이탄 플랫폼 관련</label></button>
-                </li>
+                {#                <li>#}
+                {#                    <button class="faq__category--text" data-filter="platform"><label for="b">크레들 플랫폼 관련</label>#}
+                {#                    </button>#}
+                {#                </li>#}
                 <li>
                     <button class="faq__category--text" data-filter="account"><label for="c">회원계정 및 보안</label></button>
                 </li>
                 <li>
-                    <button class="faq__category--text" data-filter="count"><label for="d">입/출금 관련</label></button>
+                    <button class="faq__category--text" data-filter="allocation"><label for="e">수익 및 배당</label></button>
                 </li>
-                <li>
-                    <button class="faq__category--text" data-filter="auction"><label for="e">옥션/청약</label></button>
-                </li>
-                <li>
-                    <button class="faq__category--text" data-filter="trade"><label for="f">거래/매매 관련</label></button>
-                </li>
-                <li>
-                    <button class="faq__category--text" data-filter="alloc"><label for="g">수익 및 배당</label></button>
-                </li>
+                {#                <li>#}
+                {#                    <button class="faq__category--text" data-filter="trade"><label for="f">거래/매매 관련</label></button>#}
+                {#                </li>#}
+                {#                <li>#}
+                {#                    <button class="faq__category--text" data-filter="alloc"><label for="g">수익 및 배당</label></button>#}
+                {#                </li>#}
             </div>
         </ul>
     </div>
@@ -95,86 +149,198 @@
 <section id="accordian__question">
     <div class="question__answer--accordian" data-type="platform">
         <div class="question">
-            <h2 class="question__title">Q. 타이탄은 어떤 서비스인가요?</h2>
+            <h5 class="question__title">Q. 크레들은 어떤 서비스인가요?</h5>
             <button class="question__button">
                 <i class="fas fa-angle-down"></i>
             </button>
         </div>
         <div class="answer">
-            <h3 class="question__answer">
-                <h2>브랜딩화를 통한 채널 지속가능성</h2>
-                <p>지원 세계 최초 유튜브 채널 지분공유 플랫폼 타이탄은 유튜브 크리에이터와 시청자, 투자자가 함께 채널 지분을 공유함으로써 지속가능한 유튜브 채널을 만들어가는
-                    공간입니다.<br><br>
-                    개별 영상의 조회수에 크게 의존할 수 밖에없는 일부 유튜버들이 자극적인 콘텐트로 ‘조회 수 올리기’에만 몰두하며 사회적으로 부적절한 컨텐츠들이 점차 증가하고 있습니다.<br>
-                    이러한 구조에서 유익한 컨텐츠를 제공하는 크리에이터들은 지속적으로 채널 운영에 어려움을 겪고 있습니다.<br><br>여기서 타이탄은 크리에이터가 개별 조회수에만 집중하는 것이 아닌
-                    채널의
-                    유니크한 특성을 유지할 수 있도록 지원합니다.
-                    즉, 채널 자체의 펀더멘탈을 강화하고 하나의 브랜드화해 일회성이 아닌 지속가능성을 배양할 수 있는 유튜브 생태계를 만들기 위해 탄생했습니다.</p><br>
-                <h2>'공유'를 통한 '성장'</h2>
-                <p>타이탄 플랫폼을 사용하기 위해서는 유튜브 프리미엄 사용자이여야 합니다.<br>
-                    유튜브의 수익구조상, 유튜브 프리미임 시청자가 증가할 수록 크리에이터의 수익은 증가하게 됩니다.<br>
-                    이점에서 , 타이탄 플랫폼을 통해 지분을 공유한 크리에이터는 향후 양질의 컨텐츠를 지속적으로 생산할 수 있도록 지원을 받을 수 있습니다.</p><br>
-                <h2>시청자가 함께 하는 '성장'</h2>
-                <p>평소 애청하는 채널의 더 창의적인 컨텐츠, 더 유익한 컨텐츠를 시청하면서 발생하는 채널 수익금을 분배도 받을 수 있는 선순환 투자처로 활용할 수 있습니다.<br>
-                    남들보다 먼저 알아본 성장 가능성이 높은 채널의 지분을 소유해 크리에이터의 초기 성장을 지원할 수 있으며, 더불어 채널의 성장 과실을 함께 공유할 수 있습니다.<br>
-                    또한, 꾸준히 활동하는 채널 지분을 보유해 매일 시청하는 컨텐츠의 단순 소비자를 넘어 채널 수익 배당을 공유받을 수 있는 새로운 투자처로 활용할 수 있습니다.<br><br>
-                    - 회원들은 타이탄이 제공하는 채널 운영 정보를 바탕으로 투자 타당성을 판단할 수 있어 ‘투명한 투자’가 가능합니다.<br><br>
-                    채널 지분 구매 후, 회원들은 분기별로 꾸준한 구글 애드센스 수익을 통해 안정적이고 장기적인 수익 창출은 물론, 회원 간의 거래를 통한 단기 원금 회수와 차익 실현도
-                    가능합니다.<br>
-                    내가 시청할 수록 더 많은 배당금을 가져갈 수 있는 투명한 이익 공유 구조입니다.<br></p></h3>
+            <div class="question__answer">
+                <h5 class="answer__text">크레들은 브랜드화를 목표로 하는 크리에이터에게 지속성을 제공하는 크리에이터 수익 공유 플랫폼입니다.</h5>
+                <a class="question__detail" href="https://www.notion.so/0e2174df31ac41a3b739e49492ba23a3">크레들 더 자세히
+                    알아보기</a>
+            </div>
         </div>
     </div>
-    <div class="question__answer--accordian" data-type="platform">
+    <div class="question__answer--accordian" data-type="frq">
         <div class="question">
-            <h2 class="question__title">Q. 채널 지분은 어떻게 얻을 수 있나요?</h2>
+            <h5 class="question__title">Q. 수익 공유권은 어떻게 얻을 수 있나요?</h5>
             <button class="question__button">
                 <i class="fas fa-angle-down"></i>
             </button>
         </div>
         <div class="answer">
-            <h3 class="question__answer">
-                <p>타이탄에서 '사전 공모'와 '마켓'을 통해 지분을 소유할 수 있습니다.<br>
-                    구매가 완료된 소유 채널 지분은 '마이 채널' -> '지분 현황'에서 확인이 가능합니다.
-                </p>
-                <p>
-                    <br> < 마켓 거래 시간 > <br>
-                    마켓은 매주 평일 오전 9시 ~ 오후 3시 운영됩니다.
-                </p>
-            </h3>
+            <h5 class="question__answer">
+                수익 공유권은 2 가지 방식으로 얻을 수 있습니다.
+                <dt><strong>1. 공모</strong></dt>
+                <dd>
+                    <h5>투자 회원은 크레들 플랫폼을 통해 처음 발생되는 수익 공유권에 대한 공모에 참여해 수익 공유권을 구매할 수 있습니다.</h5>
+                    <img src="/static/images/auction_faq.png">
+                </dd>
+                <dt><strong>2. 거래</strong></dt>
+                <dd>
+                    <h5>투자 회원은 크레들 플랫폼이 제공하는 '거래' 기능을 통해 투자 회원들 사이에서 수익 공유권을 자유롭게 거래할 수 있습니다.</h5>
+                    <img class="frq__trans--img" src="/static/images/contract__frq.png">
+                </dd>
+                {##}
+            </h5>
         </div>
     </div>
-    <div class="question__answer--accordian" data-type="platform">
+    <div class="question__answer--accordian" data-type="frq">
         <div class="question">
-            <h2 class="question__title">Q. 타이탄에 투자한 제 투자자산은 안전하게 운영되나요?</h2>
+            <h5 class="question__title">Q. 투자 수익을 어떻게 얻나요?</h5>
             <button class="question__button">
                 <i class="fas fa-angle-down"></i>
             </button>
         </div>
         <div class="answer">
-            <h3 class="question__answer">
-                <p>타이탄 플랫폼의 거래 정보는 중앙집중형 데이터 저장 방식이 아닌,<br>
-                    플랫폼 참여자 모두에게 동일한 데이터가 분산 저장되는
-                <h2>블록체인 분산원장 기술</h2>로 안전하게 보호됩니다.
-                </p>
-            </h3>
+            <h5 class="question__answer">
+                <p>수익 공유권 투자자는 <strong>'수익 공유금'</strong>과 <strong>'차익 실현'</strong>을 통해 투자 수익을 얻을 수 있습니다. </p>
+            </h5>
         </div>
     </div>
-    <div class="question__answer--accordian" data-type="alloc">
+    <div class="question__answer--accordian" data-type="account">
         <div class="question">
-            <h2 class="question__title">Q. 수익 공유금은 누구나 다 받을 수 있나요?</h2>
+            <h5 class="question__title">Q. 다른 사람 명의로 가입 가능한가요?</h5>
             <button class="question__button">
                 <i class="fas fa-angle-down"></i>
             </button>
         </div>
         <div class="answer">
-            <h3 class="question__answer">
-                <p>타이탄 플랫폼의 거래 정보는 중앙집중형 데이터 저장 방식이 아닌,<br>
-                    플랫폼 참여자 모두에게 동일한 데이터가 분산 저장되는
-                <h2>블록체인 분산원장 기술</h2>로 안전하게 보호됩니다.
-                </p>
-            </h3>
+            <h5 class="question__answer">
+                타인의 명의 정보를 이용하여 크레들에 가입한 경우 즉시 이용이 정지될 수 있습니다.<br><br>
+                반드시 본인 명의로 크레들 플랫폼을 이용해 주시기 바랍니다.
+            </h5>
         </div>
     </div>
+    <div class="question__answer--accordian" data-type="account">
+        <div class="question">
+            <h5 class="question__title">Q. 미성년자도 가입이 가능한가요?</h5>
+            <button class="question__button">
+                <i class="fas fa-angle-down"></i>
+            </button>
+        </div>
+        <div class="answer">
+            <h5 class="question__answer">
+                가입하시는 회원님께서 미성년자이신 경우 보호자(법정대리인)에 동의가 필요합니다.<br><br>
+                계정생성을 위한 회원가입 절차를 직접 진행 하신 후 크레들 플랫폼 '거래' 기능을 진행하기 위한
+                본인인증 단계에서 보호자(법정대리인)에 추가 휴대폰 본인인증(동의)이 필요합니다.<br><br>
+                보호자 동의 진행 시 법적 보호자(부모)가 아닌 타인을 통해 휴대폰 인증이 진행되는 경우
+                본인인증과 보호자 동의 진행은 회원가입 이후 개인정보관리페이지에서 진행가능하며
+                책임의 소재는 본인에게 있습니다.
+            </h5>
+        </div>
+    </div>
+    </div>
+    <div class="question__answer--accordian" data-type="account">
+        <div class="question">
+            <h5 class="question__title">Q. 한 사람이 여러 개의 계정을 사용할 수 있나요?</h5>
+            <button class="question__button">
+                <i class="fas fa-angle-down"></i>
+            </button>
+        </div>
+        <div class="answer">
+            <h5 class="question__answer">
+                크레들에서는 1인 1개의 계정만 사용이 가능합니다.
+            </h5>
+        </div>
+    </div>
+    </div>
+    <div class="question__answer--accordian" data-type="account">
+        <div class="question">
+            <h5 class="question__title">Q. 법인도 가입할 수 있나요?</h5>
+            <button class="question__button">
+                <i class="fas fa-angle-down"></i>
+            </button>
+        </div>
+        <div class="answer">
+            <h5 class="question__answer">
+                크레들 플랫폼은 개인회원만 가입 가능합니다.
+            </h5>
+        </div>
+    </div>
+    </div>
+    <div class="question__answer--accordian" data-type="allocation">
+        <div class="question">
+            <h5 class="question__title">Q. 수익 공유권이 무엇인가요?</h5>
+            <button class="question__button">
+                <i class="fas fa-angle-down"></i>
+            </button>
+        </div>
+        <div class="answer">
+            <h5 class="question__answer">
+                수익 공유지분 발행계약에 따라 발생한 것으로, 크리에이터 수익(수익 공유금)에 대해 정산받을 수 있는 권리를 의미합니다.
+            </h5>
+        </div>
+    </div>
+    <div class="question__answer--accordian" data-type="allocation">
+        <div class="question">
+            <h5 class="question__title">Q. 수익 공유금은 무엇인가요?</h5>
+            <button class="question__button">
+                <i class="fas fa-angle-down"></i>
+            </button>
+        </div>
+        <div class="answer">
+            <h5 class="question__answer">
+                '수익 공유금'이란 크리에이터 광고수익, 그외에 별도 수익 공유지분 발행계약에 따라 정한 크리에이터 수익을 의미합니다.
+            </h5>
+        </div>
+    </div>
+{#    <div class="question__answer--accordian" data-type="allocation">#}
+{#        <div class="question">#}
+{#            <h5 class="question__title">Q. 수익 공유금은 언제 정산되나요?</h5>#}
+{#            <button class="question__button">#}
+{#                <i class="fas fa-angle-down"></i>#}
+{#            </button>#}
+{#        </div>#}
+{#        <div class="answer">#}
+{#            <h5 class="question__answer">#}
+{#                채널 수익 공유금은 회원님께서 보유하신 <strong>채널 지분에 해당하는 '채널 수익' 을 보유일수 만큼 산정</strong>하여 <strong><br>다음 분기 첫#}
+{#                영업일</strong>#}
+{#                '내 지갑'으로 일괄정산해 드리고 있습니다.<br>( 영업일 기준은 주말/공휴일 제외한 평일 기준임 점 참고 부탁드립니다 )<br><br>#}
+{#                Ex. 21년 1분기 (1~3월) 발생한 채널 수익 공유금은 다음 분기인 2분기 첫 영업일 4/1에 일괄 정산해드리고 있습니다.</h5>#}
+{#        </div>#}
+{#    </div>#}
+    <div class="question__answer--accordian" data-type="allocation">
+        <div class="question">
+            <h5 class="question__title">Q. 수익 공유금에 대한 세금이 궁궁해요</h5>
+            <button class="question__button">
+                <i class="fas fa-angle-down"></i>
+            </button>
+        </div>
+        <div class="answer">
+            <h5 class="question__answer">
+                수익 공유권을 보유하시게 되면 수익 공유금을 정산 받으실 때와 구매한 금액보다 높은 가격으로 보유한 수익 공유권을 판매했을 때<br><strong>(차익 실현)</strong>
+                수입이 발생하게 되며, 두 가지 경우 모두 <strong>기타소득</strong>으로 분류됩니다.<br><br>
+                기타 소득의 경우, 건 당 수입이 5만원 이하이고 동시에 연간 누적 총기타소득이 3백만원 이하일 시 분리과세를 선택할 수 있으며
+                분리과세를 선택하여 납세의무를 종결하실 수 있습니다.<br><br>
+                다만 연간총기타소득이 3백만원을 초과하는 경우에는 전체금액에 대해 종합소득과세표준에 합산하여 매년 5월말까지 종합소득세 신고해야 합니다.<br><br>
+                <dt><strong>크레들 이용시 세금이 발생하는 경우</strong></dt>
+                <dl>1. '수익 공유금' 수입이 5만원 초과일때</dl>
+                <dl>2. '수익 공유권' 매각 '차익'이 5만원 초과일때</dl>
+                <br>
+                <dt><strong>크레들 세금신고</strong></dt>
+                <dl>1. 과세최저한(건당 5만원 이하)으로 소득세가 과세되지 않은 소득을 지급할 때는 원천징수를 하지 않습니다.</dl>
+                <dl>2. 수익 공유금' 및 '수익 공유권' 매각 '차익'이 건당 5만원 초과 시 수익전체 금액의 22%를 원천징수하고 기타소득 신고 후 세금을 납부합니다.</dl>
+                <dl>3. 크레들의 기타소득은 필요경비를 제외하지 않는 기타소득에 해당하여 기타소득이 기타소득금액과 같습니다.</dl>
+            </h5>
+        </div>
+    </div>
+</section>
+<section id="contact__footer">
+    <div class="description__contact">
+        <div class="contact__text">
+            <h4 class="contact__email--footer"><a href='https://www.notion.so/0e2174df31ac41a3b739e49492ba23a3'>크레들 company</a>
+            </h4>
+            <div class="contact__email--footer">
+                <h4 class="contact__us--footer">Contact us</h4>
+                <h4 class="contact__us--footer">info@creadle.kr</h4>
+            </div>
+            <h4 class="contact__email--footer"><a href="/term">이용약관</a></h4>
+            <h4 class="contact__email--footer">개인정보보호정책</h4>
+        </div>
+    </div>
+    <h4 class="contact__auth--footer">@creadle,INC.ALL RIGHTS RESERVED.</h4>
 </section>
 </body>
 </html>

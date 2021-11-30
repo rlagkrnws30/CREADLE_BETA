@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .intro {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+        }
+
+        .intro h1 {
+            color: #fff;
+            margin: auto;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+        }
+
+        .container h1 {
+            text-align: center;
+            margin: 20px
+        }
+
+        .row {
+            padding: 30px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .col {
+            flex-basis: 40%;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 30px;
+        }
+
+        .frame {
+            position: absolute;
+            z-index: 100000;
+            width: 300px;
+        }
+
+        .frame__content {
+            position: relative;
+            top: 1%;
+            left: 3%;
+            width: 275px;
+            opacity: 0;
+            transform: translateY(-1.5%);
+            transition: all 1s ease-in-out;
+        }
+
+        .active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+    <script>
+        window.addEventListener('scroll', () => {
+            let content = document.querySelector('.frame__content');
+            let contentPosition = content.getBoundingClientRect().top;
+            let screenPosition = window.innerHeight / 1.2;
+            if (contentPosition < screenPosition) {
+                content.classList.add('active');
+            } else {
+                content.classList.remove('active');
+            }
+        })
+    </script>
+</head>
+<body>
+<div class="intro">
+    <h1>Welcome Web Tutorial</h1>
+</div>
+<div class="container">
+    <h1>Scroll</h1>
+    <div class="row">
+        <div class="col">
+            <p>
+                크리에이터 성장에 따라 변하는 수익 공유권 시세 변동 차익을 얻을 수 있습니다.
+                크리에이터 수익 공유권 실시간 투자와 매매 거래를 통해
+                주식과 같이 시세차익을 기대하고, 자유롭게 거래할 수 있습니다.
+            </p>
+        </div>
+        <div class="col">
+            <img src="static/images/moible_frame.png" class="frame">
+            <img src="static/images/mobile_test.png" class="frame__content">
+        </div>
+    </div>
+    <img src="static/images/about_main.png">
+</div>
+</body>
+</html>
