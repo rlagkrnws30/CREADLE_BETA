@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+
+
+/* Top Navbar CSS 부분 */
+/* Add a black background color to the top navigation */
+.topnav-container
+{
+  position: relative;
+  width: 100%;
+  height: 70px;
+  display: flex;
+
+}
+
+.topnav-container .company
+{
+  position: relative;
+  align-items: flex-start;
+  left: 15px;
+}
+
+.topnav-container .topnav {
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  margin: auto;
+}
+
+.topnav-container .user_info {
+  position: relative;
+  align-items: flex-end;
+  right: 15px;
+  margin: auto 0; /* 상하 가운데 정렬, 좌우 margin 0으 */
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #8D8989;
+  text-align: center;
+  /* 메뉴간 간격 40px */
+  padding: 14px 40px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  border-radius: 60px;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #287BFF;
+  color: white;
+  border-radius: 60px;
+}
+
+
+
+
+/*  Top 10 Recommend 부분 CSS */
+.TopRecommend
+{
+  position: relative;
+  /* background-color: red; */
+  width: 100%;
+  height: 300px;
+}
+
+
+.RecommendBox
+{
+  position: absolute;
+  /* background-color: #287BFF; */
+  width: 1100px;
+  height: 320px;
+  top: 20px;
+  margin: auto;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0.5px 4px 4px rgba(0, 0, 0, 0.5);
+  filter: blur(5px);
+  border-radius: 15px;
+  /* absolute일때 가운데 정렬하는법 */
+  left: 50%;  /*먼저 왼쪽에서 50%하고*/
+  transform: translate(-50%); /*사이즈의 50%만큼 왼쪽으로 이동시켜준다*/
+  
+}
+
+.title
+{
+  position: absolute;
+  text-align: center;
+  color: #287BFF;
+  font-size: 20px;
+  top: 10px;
+  left: 22%;
+  
+}
+
+.highlight
+{
+  color: #287BFF;
+  font-weight: 1000;
+  
+}
+
+
+.container {
+  position: absolute;
+  height: 300px;
+  width: 100%;
+  top: 100px;
+  /* left: calc(50% - 300px); */
+  display: flex;
+}
+
+.card {
+  position: relative;
+  left: 0px;
+  /* display: flex; */
+  height: 200px;
+  width: 200px;
+  background: #FFFFFF;
+  border: 1px solid #EDE9E9;
+  box-shadow: 4px 15px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+/*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  
+  
+}
+
+.card:not(:first-child) {
+    margin-left: -50px;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+
+/* .bar {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  height: 5px;
+  width: 150px;
+} */
+
+.cardlist
+{
+  position: relative;
+  margin: 0 auto;
+  padding-top: 60px;
+  display: flex;
+}
+
+.circle {
+  position: relative;
+  width: fit-content;
+  height:fit-content;
+  left: 50px;
+  top:10px;
+}
+
+.ch-name
+{
+  position: relative;
+  width: 100%;
+  top: 10px;
+  height: fit-content;
+  text-align: center;
+}
+.ch-viewrs
+{
+  position: relative;
+  /* top: 160px; */
+  text-align: center;
+  font-size: 13px;
+  color: #8D8989;
+  
+}
+
+
+
+
+.stroke {
+  stroke:#287BFF;
+  stroke-dasharray: 380;
+  stroke-dashoffset: 380;
+  transition: 0.6s ease-out;
+  stroke-width: 3px;
+
+}
+
+/* svg {
+  fill: #8D8989;
+  stroke-width: 2px;
+} */
+.circle img
+{
+  display: block;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.card:hover .stroke {
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
+}
